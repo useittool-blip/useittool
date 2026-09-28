@@ -1,182 +1,52 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-zinc-100 text-zinc-700">
-      {/* Main Footer */}
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
-          
-          {/* Column 1: About */}
-          <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white font-bold text-lg">
-                U
-              </div>
-              <span className="text-xl font-bold text-zinc-900">UseItTool</span>
-            </Link>
-            <p className="text-sm text-zinc-600 leading-relaxed mb-4">
-              Fast, free, and private online tools for your everyday tasks. 
-              100% free, no signup required.
-            </p>
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center gap-1 px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
-                100% Free
-              </span>
-              <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
-                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                Private
-              </span>
-            </div>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">🏠</span> Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/all-tools" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">🛠️</span> All Tools
-                </Link>
-              </li>
-              <li>
-                <Link href="/#categories" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">📂</span> Categories
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">ℹ️</span> About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">📬</span> Contact Us
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Legal */}
-          <div>
-            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider mb-4">
-              Legal
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/privacy" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">🔒</span> Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">⚖️</span> Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookies" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">🍪</span> Cookie Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/disclaimer" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">⚠️</span> Disclaimer
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Popular Tools */}
-          <div>
-            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider mb-4">
-              Popular Tools
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/tools/image-compressor" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">🖼️</span> Image Compressor
-                </Link>
-              </li>
-              <li>
-                <Link href="/tools/word-counter" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">📝</span> Word Counter
-                </Link>
-              </li>
-              <li>
-                <Link href="/tools/json-formatter" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">📋</span> JSON Formatter
-                </Link>
-              </li>
-              <li>
-                <Link href="/tools/qr-code-generator" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">📱</span> QR Code Generator
-                </Link>
-              </li>
-              <li>
-                <Link href="/tools/password-generator" className="text-sm text-zinc-600 hover:text-indigo-600 transition-colors flex items-center gap-2">
-                  <span className="text-xs">🔐</span> Password Generator
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 5: Newsletter */}
-          <div>
-            <h3 className="text-sm font-semibold text-zinc-900 uppercase tracking-wider mb-4">
-              Stay Updated
-            </h3>
-            <p className="text-sm text-zinc-600 mb-3">
-              Get notified about new tools and updates. No spam, unsubscribe anytime.
-            </p>
-            <form className="space-y-2">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                required
-                className="w-full px-3 py-2 bg-white border border-zinc-300 rounded-lg text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center gap-2"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Subscribe
-              </button>
-            </form>
-            <p className="text-xs text-zinc-500 mt-2">
-              🔒 We respect your privacy.
-            </p>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-zinc-300 my-8"></div>
-
-        {/* Bottom Footer - جميع العناصر في صف واحد */}
-        <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-600">
-          <p>
-            © {currentYear} <span className="text-zinc-900 font-medium">UseItTool</span>. All rights reserved.
-          </p>
-          <span className="flex items-center gap-1">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            All systems operational
-          </span>
-          <p className="italic">
-            Made with ❤️ for everyone who needs fast, free, and private tools.
+    <footer className="bg-zinc-900 text-zinc-300 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Brand */}
+        <div className="md:col-span-1">
+          <h3 className="text-white text-xl font-bold mb-4">UseItTool</h3>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Fast, free, and private online tools for your everyday tasks. 100% free, no signup required.
           </p>
         </div>
+
+        {/* Quick Links */}
+        <div>
+          <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/" className="hover:text-white transition-colors">🏠 Home</Link></li>
+            <li><Link href="/all-tools" className="hover:text-white transition-colors">🛠️ All Tools</Link></li>
+            <li><Link href="/about" className="hover:text-white transition-colors">ℹ️ About Us</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition-colors">📬 Contact Us</Link></li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h4 className="text-white font-semibold mb-4">Legal</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/privacy" className="hover:text-white transition-colors">🔒 Privacy Policy</Link></li>
+            <li><Link href="/terms" className="hover:text-white transition-colors">⚖️ Terms of Service</Link></li>
+            <li><Link href="/cookies" className="hover:text-white transition-colors">🍪 Cookie Policy</Link></li>
+            <li><Link href="/disclaimer" className="hover:text-white transition-colors">⚠️ Disclaimer</Link></li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h4 className="text-white font-semibold mb-4">Stay Updated</h4>
+          <p className="text-sm text-zinc-400 mb-4">Get notified about new tools. No spam.</p>
+          <a href="mailto:support@useittool.com" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">
+            📧 support@useittool.com
+          </a>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-zinc-800 text-center text-sm text-zinc-500">
+        <p>© 2026 UseItTool. All rights reserved.</p>
+        <p className="mt-2">Made with ❤️ for everyone who needs fast, free, and private tools.</p>
       </div>
     </footer>
   );
