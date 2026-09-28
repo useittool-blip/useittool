@@ -11,6 +11,12 @@ export type Tool = {
   relatedTools: string[];
 };
 
+export type Category = {
+  id: string;
+  name: string;
+  icon: string;
+};
+
 export const tools: Tool[] = [
   {
     slug: "image-compressor",
@@ -40,7 +46,7 @@ export const tools: Tool[] = [
     slug: "png-to-jpg",
     name: "PNG to JPG",
     description: "Convert PNG images to JPG format instantly. Choose background color for transparency and adjust quality for optimal file size.",
-    icon: "🔄",
+    icon: "",
     category: "Image",
     seoTitle: "PNG to JPG Converter - Convert PNG to JPEG Online Free",
     metaDescription: "Free online PNG to JPG converter. Convert PNG images to JPEG format with customizable background color and quality.",
@@ -98,7 +104,7 @@ export const tools: Tool[] = [
     slug: "percentage-calculator",
     name: "Percentage Calculator",
     description: "Calculate percentages instantly. Find X% of Y, what % X is of Y, percentage change, and discount calculations.",
-    icon: "📊",
+    icon: "",
     category: "Calculators",
     seoTitle: "Percentage Calculator - Calculate Percentages Online Free",
     metaDescription: "Free online percentage calculator. Calculate percentages, percentage change, discounts, and more. Instant results.",
@@ -132,7 +138,7 @@ export const tools: Tool[] = [
     slug: "base64-encoder-decoder",
     name: "Base64 Encoder/Decoder",
     description: "Encode text to Base64 or decode Base64 to text instantly. Supports Unicode, URL-safe encoding, and file upload.",
-    icon: "🔐",
+    icon: "",
     category: "Developer",
     seoTitle: "Base64 Encoder/Decoder - Convert Text to Base64 Online Free",
     metaDescription: "Free online Base64 encoder and decoder. Convert text to Base64 and vice versa with URL-safe option.",
@@ -143,7 +149,7 @@ export const tools: Tool[] = [
     slug: "color-picker",
     name: "Color Picker",
     description: "Pick colors visually and get HEX, RGB, and HSL values instantly. Generate color variations, harmonies, and CSS code.",
-    icon: "🎨",
+    icon: "",
     category: "Design",
     seoTitle: "Color Picker - HEX, RGB, HSL Color Converter Online Free",
     metaDescription: "Free online color picker. Pick colors, get HEX, RGB, HSL values, generate color variations and harmonies.",
@@ -176,20 +182,18 @@ export const tools: Tool[] = [
   },
 ];
 
-// ✅ الدالتان المفقودتان تمت إضافتهما هنا:
-
-export const getAllTools = () => {
+export const getAllTools = (): Tool[] => {
   return tools;
 };
 
-export const getCategories = () => {
+export const getCategories = (): Category[] => {
   const uniqueCategories = Array.from(new Set(tools.map((tool) => tool.category)));
   return uniqueCategories.map((category) => {
     let icon = "🛠️";
     if (category === "Image") icon = "🖼️";
     else if (category === "Text") icon = "📝";
     else if (category === "Developer") icon = "💻";
-    else if (category === "QR") icon = "📱";
+    else if (category === "QR") icon = "";
     else if (category === "Calculators") icon = "📊";
     else if (category === "Design") icon = "🎨";
     

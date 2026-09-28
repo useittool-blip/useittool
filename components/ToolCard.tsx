@@ -1,23 +1,20 @@
-import Link from "next/link";
+import Link from 'next/link';
+import { Tool } from '@/lib/tools';
 
-interface ToolCardProps {
-  name: string;
-  description: string;
-  href: string;
-  icon: string;
-}
-
-export default function ToolCard({ name, description, href, icon }: ToolCardProps) {
+export default function ToolCard({ tool }: { tool: Tool }) {
   return (
-    <Link
-      href={href}
-      className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-lg"
+    <Link 
+      href={`/tools/${tool.slug}`} 
+      className="block p-6 bg-white rounded-xl border border-zinc-200 hover:border-indigo-500 hover:shadow-md transition-all group"
     >
-      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100 text-2xl transition group-hover:bg-zinc-900 group-hover:text-white">
-        {icon}
-      </div>
-      <h3 className="font-bold text-zinc-950">{name}</h3>
-      <p className="mt-2 text-sm leading-6 text-zinc-500">{description}</p>
+      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{tool.icon}</div>
+      <h3 className="text-lg font-semibold text-zinc-900 mb-2">{tool.name}</h3>
+      <p className="text-sm text-zinc-600 line-clamp-2">{tool.description}</p>
+      {tool.popular && (
+        <span className="inline-block mt-3 px-2 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 rounded-full">
+          Popular
+        </span>
+      )}
     </Link>
   );
 }

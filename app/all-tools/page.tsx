@@ -10,7 +10,7 @@ export default function AllToolsPage() {
         <h1 className="text-3xl font-bold text-zinc-900 mb-8 text-center">All Tools</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {tools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
+            <ToolCard key={tool.slug} tool={tool} />
           ))}
         </div>
       </div>

@@ -1,11 +1,11 @@
 import SearchBar from "@/components/SearchBar";
 import ToolCard from "@/components/ToolCard";
-import { getAllTools, getCategories } from "@/lib/tools";
+import { getAllTools, getCategories, Category } from "@/lib/tools";
 
 export default function HomePage() {
   const tools = getAllTools();
-  const categories = getCategories();
-  const popularTools = tools.slice(0, 6);
+  const categories: Category[] = getCategories();
+  const popularTools = tools.filter((tool) => tool.popular).slice(0, 6);
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
@@ -41,7 +41,7 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold text-zinc-900 mb-6">Popular Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {popularTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} />
+            <ToolCard key={tool.slug} tool={tool} />
           ))}
         </div>
       </section>
