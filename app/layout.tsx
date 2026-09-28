@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
-  title: "UseItTool",
-  description: "Free online tools",
+  title: "UseItTool - Free Online Tools",
+  description: "Fast, free, and private online tools for your everyday tasks.",
 };
 
 export default function RootLayout({
@@ -14,8 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {children}
+      <body className="flex flex-col min-h-screen bg-zinc-50">
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
         <CookieBanner />
       </body>
     </html>
