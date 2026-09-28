@@ -4,7 +4,7 @@ export type Tool = {
   description: string;
   icon: string;
   category: string;
-  popular?: boolean; // <-- تمت الإضافة لدعم الأدوات الشائعة
+  popular?: boolean;
   seoTitle: string;
   metaDescription: string;
   keywords: string[];
@@ -18,7 +18,7 @@ export const tools: Tool[] = [
     description: "Compress JPG, PNG, and WebP images online while reducing file size. Adjust quality and format to get the perfect balance.",
     icon: "🖼️",
     category: "Image",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "Image Compressor - Reduce Image File Size Online Free",
     metaDescription: "Free online image compressor. Reduce JPG, PNG, and WebP file sizes while maintaining quality. No signup required.",
     keywords: ["image compressor", "compress image", "reduce image size", "jpg compressor", "png compressor"],
@@ -30,7 +30,7 @@ export const tools: Tool[] = [
     description: "Count words, characters, sentences, and paragraphs in your text. Get reading time estimates and detailed statistics instantly.",
     icon: "📝",
     category: "Text",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "Word Counter - Count Words, Characters & Sentences Free",
     metaDescription: "Free online word counter. Count words, characters, sentences, paragraphs, and get reading time. No signup required.",
     keywords: ["word counter", "character counter", "count words", "text counter", "sentence counter"],
@@ -64,7 +64,7 @@ export const tools: Tool[] = [
     description: "Convert text between different cases: UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more.",
     icon: "🔤",
     category: "Text",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "Case Converter - Convert Text to UPPERCASE, lowercase & More",
     metaDescription: "Free online case converter. Convert text to uppercase, lowercase, title case, camelCase, snake_case, and more.",
     keywords: ["case converter", "text converter", "uppercase converter", "lowercase converter", "camel case"],
@@ -76,7 +76,7 @@ export const tools: Tool[] = [
     description: "Format, beautify, minify, and validate JSON data. Sort keys alphabetically, choose indentation, and upload JSON files.",
     icon: "📋",
     category: "Developer",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "JSON Formatter & Validator - Beautify, Minify JSON Online Free",
     metaDescription: "Free online JSON formatter. Beautify, minify, and validate JSON data with customizable indentation and key sorting.",
     keywords: ["json formatter", "json beautifier", "json validator", "json minifier", "format json"],
@@ -88,7 +88,7 @@ export const tools: Tool[] = [
     description: "Generate QR codes for URLs, text, email, phone, WiFi, and vCards. Customize colors, size, and error correction level.",
     icon: "📱",
     category: "QR",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "QR Code Generator - Create QR Codes for URLs, WiFi & More Free",
     metaDescription: "Free online QR code generator. Create QR codes for URLs, text, email, phone, WiFi, and vCards with custom colors.",
     keywords: ["qr code generator", "create qr code", "qr code maker", "free qr code", "qr generator"],
@@ -122,7 +122,7 @@ export const tools: Tool[] = [
     description: "Generate strong, secure passwords instantly. Customize length, character types, and exclude similar characters.",
     icon: "🔐",
     category: "Developer",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "Password Generator - Create Strong Secure Passwords Free",
     metaDescription: "Free online password generator. Create strong, secure passwords with customizable length and character types.",
     keywords: ["password generator", "strong password", "secure password", "random password", "password creator"],
@@ -156,7 +156,7 @@ export const tools: Tool[] = [
     description: "Calculate your Body Mass Index (BMI) instantly with metric or imperial units. Get health advice based on WHO standards.",
     icon: "⚖️",
     category: "Calculators",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "BMI Calculator - Calculate Body Mass Index Online Free",
     metaDescription: "Free online BMI calculator. Calculate Body Mass Index with metric or imperial units, get health advice.",
     keywords: ["bmi calculator", "body mass index", "weight calculator", "health calculator", "bmi chart"],
@@ -168,10 +168,35 @@ export const tools: Tool[] = [
     description: "Convert Markdown to HTML instantly with live preview. Supports headings, lists, code blocks, tables, and more.",
     icon: "📝",
     category: "Developer",
-    popular: true, // <-- أداة شائعة
+    popular: true,
     seoTitle: "Markdown to HTML Converter - Live Preview Online Free",
     metaDescription: "Free online Markdown to HTML converter with live preview. Convert Markdown to HTML instantly. 100% private.",
     keywords: ["markdown to html", "markdown converter", "md to html", "markdown preview", "markdown editor"],
     relatedTools: ["json-formatter", "base64-encoder-decoder"],
   },
 ];
+
+// ✅ الدالتان المفقودتان تمت إضافتهما هنا:
+
+export const getAllTools = () => {
+  return tools;
+};
+
+export const getCategories = () => {
+  const uniqueCategories = Array.from(new Set(tools.map((tool) => tool.category)));
+  return uniqueCategories.map((category) => {
+    let icon = "🛠️";
+    if (category === "Image") icon = "🖼️";
+    else if (category === "Text") icon = "📝";
+    else if (category === "Developer") icon = "💻";
+    else if (category === "QR") icon = "📱";
+    else if (category === "Calculators") icon = "📊";
+    else if (category === "Design") icon = "🎨";
+    
+    return {
+      id: category.toLowerCase().replace(/\s+/g, "-"),
+      name: category,
+      icon: icon,
+    };
+  });
+};
