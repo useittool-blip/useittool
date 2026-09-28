@@ -18,7 +18,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/" className="hover:text-white transition-colors">🏠 Home</Link></li>
             <li><Link href="/all-tools" className="hover:text-white transition-colors">🛠️ All Tools</Link></li>
-            <li><Link href="/about" className="hover:text-white transition-colors">ℹ️ About Us</Link></li>
+            <li><Link href="/about" className="hover:text-white transition-colors">️ About Us</Link></li>
             <li><Link href="/contact" className="hover:text-white transition-colors">📬 Contact Us</Link></li>
           </ul>
         </div>
@@ -39,7 +39,7 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Stay Updated</h4>
           <p className="text-sm text-zinc-400 mb-4">Get notified about new tools. No spam.</p>
           <a href="mailto:support@useittool.com" className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors">
-            📧 support@useittool.com
+             support@useittool.com
           </a>
         </div>
       </div>
