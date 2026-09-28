@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import ToolHero from "@/components/ToolHero";
 
 export default function ToolsLayout({
@@ -9,12 +7,10 @@ export default function ToolsLayout({
 }) {
   return (
     <div className="min-h-screen bg-white text-zinc-950">
-      <Header />
       <main className="mx-auto max-w-6xl px-6 py-8 lg:px-8">
         <ToolHero />
         {children}
       </main>
-      <Footer />
     </div>
   );
 }
