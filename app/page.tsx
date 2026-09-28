@@ -9,7 +9,6 @@ export default function HomePage() {
 
   return (
     <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
-      {/* Hero Section */}
       <section className="text-center space-y-6 py-10">
         <h1 className="text-4xl sm:text-5xl font-bold text-zinc-900 tracking-tight">
           Simple tools for everyday tasks
@@ -22,7 +21,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Categories */}
       <section>
         <h2 className="text-2xl font-bold text-zinc-900 mb-6">Browse by Category</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -39,7 +37,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Popular Tools */}
       <section>
         <h2 className="text-2xl font-bold text-zinc-900 mb-6">Popular Tools</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
